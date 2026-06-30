@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UstaBozor — Qurilish Materiallari Markazi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container d-flex flex-column align-items-stretch">
+            
+            <div class="d-flex justify-content-between align-items-center w-100">
+                <a class="navbar-brand m-0" href="#">
+                    <h3 class="fw-bold m-0 text-dark"><i class="fa-solid fa-helmet-safety text-warning me-2"></i>Usta<span class="text-primary">Bozor</span></h3>
+                </a>
+
+                <div class="welcome-text d-none d-md-block text-center">
+                    🔨 Poydevordan tomgacha — Sifatli qurilish mollari!
+                </div>
+
+                <button class="btn btn-cart position-relative" data-bs-toggle="modal" data-bs-target="#cartModal">
+                    <i class="fa-solid fa-bag-shopping me-2"></i>
+                    <span class="d-none d-sm-inline">Savat</span>
+                    <span id="cart-counter" class="position-absolute top-0 start-100 translate-middle badge rounded-pill cart-badge">0</span>
+                </button>
+            </div>
+
+            <div class="welcome-text text-center d-block d-md-none mt-2 small">
+                🔨 Sifatli qurilish mollari!
+            </div>
+
+            <div class="nav-tabs-custom mt-3">
+                <button class="nav-link active" onclick="switchCategory('material', this)">Devor va shiftni bezash materiallari</button>
+                <button class="nav-link" onclick="switchCategory('elektr', this)">Santexnika va quvur jihozlari</button>
+                <button class="nav-link" onclick="switchCategory('santexnika', this)">Elektrika jihozlari</button>
+                <button class="nav-link" onclick="switchCategory('asboblar', this)">Qo'l mehnat asboblari (Instrumentlar)</button>
+            </div>
+
+        </div>
+    </nav>
+
+    <header class="hero-section text-center">
+        <div class="container">
+            <p class="text-muted mb-1 text-uppercase fw-bold" style="font-size:0.75rem; letter-spacing: 1px;">Kafolatlangan Sifat & Tezkor Yetkazib Berish</p>
+            <h1 class="fw-extrabold text-dark mb-0" id="current-category-heading">Qurilish Mollari</h1>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        
+        <div id="pane-material" class="category-pane active-pane">
+            <div class="row g-4">
+                <div class="col-6 col-md-4">
+                    <div class="food-card">
+                        <div class="img-container">
+                            <span class="card-tag">🔥 New</span>
+                            <img src="oboy.webp" class="food-img" alt="Oboy">
+                        </div>
+                        <div class="food-info">
+                            <div>
+                                <h3 class="food-title">Devor qog'ozi (Oboy)</h3>
+                                <p class="food-desc">Xonaga tez fursatda shinamlik baxsh etuvchi, turli naqsh va rangga ega estetik qoplama.</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="price-tag">120 000 <small>SO'M</small></span>
+                                <button class="btn-add-cart" onclick="cartManager.add(101, `Devor qog'ozi (Oboy)`, 120000)">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="food-card">
+                        <div class="img-container">
+                            <span class="card-tag">🔥 New</span>
+                            <img src="suvli emulsiya.png" class="food-img" alt="Suvli emulsiya">
+                        </div>
+                        <div class="food-info">
+                            <div>
+                                <h3 class="food-title">Suvli emulsiya (Vodotemulsiya)</h3>
+                                <p class="food-desc">Shiftdan tortib devorgacha oppoq va tekis rang beruvchi, hidsiz hamda tez quriydigan boʻyoq turi.</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="price-tag">150 000 <small>SO'M</small></span>
+                                <button class="btn-add-cart" onclick="cartManager.add(102, 'Suvli emulsiya (Vodotemulsiya)', 150000)">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="food-card">
+                        <div class="img-container">
+                            <img src="Shpaklyovka kukuni.webp" class="food-img" alt="Shpaklyovka kukuni">
+                        </div>
+                        <div class="food-info">
+                            <div>
+                                <h3 class="food-title">Shpaklyovka kukuni</h3>
+                                <p class="food-desc">Devor yuzasidagi mayda teshik va notekisliklarni silliqlab, oboy yoki boʻyoqqa tayyorlab beruvchi asosiy qorishma.</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="price-tag">55 000 <small>SO'M</small></span>
+                                <button class="btn-add-cart" onclick="cartManager.add(103, 'Shpaklyovka kukuni', 55000)">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="pane-elektr" class="category-pane">
+            <div class="row g-4">
+                <div class="col-6 col-md-4">
+                    <div class="food-card">
+                        <div class="img-container">
+                            <img src="Suv jo'mragi (Smesitel).webp" class="food-img" alt="Smesitel">
+                        </div>
+                        <div class="food-info">
+                            <div>
+                                <h3 class="food-title">Suv joʻmragi (Smesitel)</h3>
+                                <p class="food-desc">Issiq va sovuq suv bosimini aralashtirib, oshxona yoki hammomda qulay foydalanishni taʼminlaydigan moslama.</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="price-tag">280 000 <small>SO'M</small></span>
+                                <button class="btn-add-cart" onclick="cartManager.add(201, 'Suv joʻmragi (Smesitel)', 280000)">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="food-card">
+                        <div class="img-container">
+                            <img src="plastik suv quvuri.jpg" class="food-img" alt="Plastik suv quvuri">
+                        </div>
+                        <div class="food-info">
+                            <div>
+                                <h3 class="food-title">Plastik suv quvuri</h3>
+                                <p class="food-desc">Chirishga va zangga chidamli, ichimlik suvi hamda isitish tizimini xavfsiz tashib beruvchi elastik quvur.</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="price-tag">12 000 <small>SO'M</small></span>
+                                <button class="btn-add-cart" onclick="cartManager.add(202, 'Plastik suv quvuri', 12000)">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="food-card">
+                        <div class="img-container">
+                            <img src="sifon rakvina uchun.jpg" class="food-img" alt="Sifon">
+                        </div>
+                        <div class="food-info">
+                            <div>
+                                <h3 class="food-title">Sifon (Rakovina uchun)</h3>
+                                <p class="food-desc">Chanoq ostidagi chiqindi suvni oʻtkazib, kanalizatsiyadan keladigan badboʻy hidlarni uy ichiga kiritmaydigan gidrozatvor.</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="price-tag">35 000 <small>SO'M</small></span>
+                                <button class="btn-add-cart" onclick="cartManager.add(203, 'Sifon (Rakovina uchun)', 35000)">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="pane-santexnika" class="category-pane">
+            <div class="row g-4">
+                <div class="col-6 col-md-4">
+                    <div class="food-card">
+                        <div class="img-container">
+                            <span class="card-tag">🔥 New</span>
+                            <img src="mis sim.jpg" class="food-img" alt="Mis sim">
+                        </div>
+                        <div class="food-info">
+                            <div>
+                                <h3 class="food-title">Elektr simlari (Mis sim)</h3>
+                                <p class="food-desc">Tok oʻtkazuvchanligi yuqori va yuklamalarga chidamli, uydagi barcha jihozlarni elektr bilan taʼminlovchi asosiy kabel.</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="price-tag">6 000 <small>SO'M</small></span>
+                                <button class="btn-add-cart" onclick="cartManager.add(301, 'Elektr simlari (Mis sim)', 6000)">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="food-card">
+                        <div class="img-container">
+                            <img src="rozetka.webp" class="food-img" alt="Rozetka">
+                        </div>
+                        <div class="food-info">
+                            <div>
+                                <h3 class="food-title">Rozetka</h3>
+                                <p class="food-desc">Maishiy texnikalar va zaryadlovchi qurilmalarni elektr tarmogʻiga xavfsiz ulash nuqtasi.</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="price-tag">22 000 <small>SO'M</small></span>
+                                <button class="btn-add-cart" onclick="cartManager.add(302, 'Rozetka', 22000)">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4">
+                    <div class="food-card">
+                        <div class="img-container">
+                            <span class="card-tag">🔥 New</span>
+                            <img src="Avtomat oʻchirgich.jpg" class="food-img" alt="Avtomat oʻchirgich">
+                        </div>
+                        <div class="food-info">
+                            <div>
+                                <h3 class="food-title">Avtomat oʻchirgich</h3>
+                                <p class="food-desc">Tarmoqda qisqa tutashuv yoki ortiqcha yuklama boʻlganda tokni avtomatik uzib, uyni yongʻindan asrovchi qalqon.</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="price-tag">30 000 <small>SO'M</small></span>
+                                <button class="btn-add-cart" onclick="cartManager.add(401, 'Avtomat oʻchirgich', 30000)">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="pane-asboblar" class="category-pane">
+            <div class="row g-4">
+                <div class="col-6 col-md-4">
+                    <div class="food-card">
+                        <div class="img-container">
+                            <img src="Shpatel (Molga).webp" class="food-img" alt="Shpatel">
+                        </div>
+                        <div class="food-info">
+                            <div>
+                                <h3 class="food-title">Shpatel (Molga)</h3>
+                                <p class="food-desc">Tarmoqda qisqa tutashuv yoki ortiqcha yuklama boʻlganda tokni avtomatik uzib, uyni yongʻindan asrovchi qalqon.</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="price-tag">25 000 <small>SO'M</small></span>
+                                <button class="btn-add-cart" onclick="cartManager.add(401, 'Shpatel (Molga)', 25000)">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="food-card">
+                        <div class="img-container">
+                            <img src="Boʻyoq surtadigan gʻaltak (Valik).webp" class="food-img" alt="Valik">
+                        </div>
+                        <div class="food-info">
+                            <div>
+                                <h3 class="food-title">Boʻyoq surtadigan gʻaltak (Valik)</h3>
+                                <p class="food-desc">Katta maydonli devor va shiftlarga emulsiya yoki laklarni tez va bir tekisda yoyish uchun eng qulay vosita.</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="price-tag">30 000 <small>SO'M</small></span>
+                                <button class="btn-add-cart" onclick="cartManager.add(402, 'Boʻyoq surtadigan gʻaltak (Valik)', 30000)">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="food-card">
+                        <div class="img-container">
+                            <span class="card-tag">🔥 New</span>
+                            <img src="Qo'l arrasi (Temir yoki yog'och uchun).jpg" class="food-img" alt="Qo'l arrasi">
+                        </div>
+                        <div class="food-info">
+                            <div>
+                                <h3 class="food-title">Qo'l arrasi</h3>
+                                <p class="food-desc">Remont jarayonida yogʻoch, plastik yoki yupqa metall profillarni aniq oʻlchamda kesib olish uchun oʻtkir tishli asbob.</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="price-tag">55 000 <small>SO'M</small></span>
+                                <button class="btn-add-cart" onclick="cartManager.add(402, `Qo'l arrasi`, 55000)">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+            <div class="modal-content">
+                <div class="modal-header d-flex align-items-center justify-content-between">
+                    <h5 class="modal-title fw-bold text-dark"><i class="fa-solid fa-cart-shopping text-warning me-2"></i>Sizning savatchangiz</h5>
+                    <button type="button" class="btn-close" data-bs-shadow="none" data-bs-dismiss="modal" aria-label="Yopish"></button>
+                </div>
+                <div class="modal-body px-4" style="max-height: 400px; overflow-y: auto;">
+                    <div id="cart-items-wrapper"></div>
+                    
+                    <div class="d-flex justify-content-between align-items-center mt-4 pt-3 border-top">
+                        <span class="text-muted fw-semibold">Jami summa:</span>
+                        <span class="fs-4 fw-black text-primary" id="cart-total-sum">0 so'm</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light rounded-3 px-4 py-2 fw-semibold text-secondary" data-bs-dismiss="modal">Yopish</button>
+                    <button type="button" class="btn btn-cart px-4 py-2" id="btn-go-checkout" onclick="checkoutFlow.openOrderModal()" disabled>
+                        Rasmiylashtirish <i class="fa-solid fa-arrow-right ms-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="orderModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold text-dark"><i class="fa-solid fa-truck-fast text-primary me-2"></i>Buyurtmani rasmiylashtirish</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Yopish"></button>
+                </div>
+                <form id="mainOrderForm" onsubmit="checkoutFlow.submitOrder(event)">
+                    <div class="modal-body px-4">
+                        
+                        <div class="mb-3">
+                            <label for="input-fullname" class="form-label fw-semibold text-secondary small">Ism va Familiya</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light text-muted"><i class="fa-regular fa-user"></i></span>
+                                <input type="text" class="form-control" id="input-fullname" placeholder="Masalan: Ahrorbek" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="input-phone" class="form-label fw-semibold text-secondary small">Telefon raqam</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light text-muted"><i class="fa-solid fa-phone"></i></span>
+                                <input type="tel" class="form-control" id="input-phone" placeholder="+998 (99) 123-4567" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold text-secondary small">Yetkazib berish manzili (GPS)</label>
+                            <input type="hidden" id="input-location">
+                            <div class="d-grid">
+                                <button type="button" class="btn btn-outline-primary py-3" id="btn-get-location" onclick="checkoutFlow.getLocation()">
+                                    <i class="fa-solid fa-crosshairs me-2"></i>GPS orqali lokatsiya olish
+                                </button>
+                            </div>
+                            <div id="location-status" class="mt-2 small"></div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-bold text-dark small d-block mb-3">To'lov uslubi:</label>
+                            
+                            <div class="row g-3">
+                                <div class="col-6">
+                                    <label class="w-100 position-relative">
+                                        <input class="form-check-input position-absolute d-none" type="radio" name="paymentMethod" id="pay-online" value="online" checked onchange="checkoutFlow.togglePaymentSection()">
+                                        <div class="payment-card-option text-center">
+                                            <i class="fa-solid fa-credit-card fs-4 text-primary mb-2 d-block"></i>
+                                            <span class="fw-semibold small d-block">Karta orqali (Click/Payme)</span>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col-6">
+                                    <label class="w-100 position-relative">
+                                        <input class="form-check-input position-absolute d-none" type="radio" name="paymentMethod" id="pay-delivery" value="delivery" onchange="checkoutFlow.togglePaymentSection()">
+                                        <div class="payment-card-option text-center">
+                                            <i class="fa-solid fa-hand-holding-dollar fs-4 text-secondary mb-2 d-block"></i>
+                                            <span class="fw-semibold small d-block">Yetkazilganda (Naqd)</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="receipt-upload-box" class="p-3 rounded-4 bg-light border border-dashed mb-3">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fa-solid fa-wallet text-warning me-2 fs-5"></i>
+                                <span class="fw-bold small text-dark">Do'kon plastik kartasi:</span>
+                            </div>
+                            <p class="mb-3 text-muted font-monospace small bg-white p-2 rounded text-center border fw-bold">9860 1201 5432 9988</p>
+                            
+                            <label for="file-receipt" class="form-label fw-semibold text-secondary small mb-1">To'lov chekini yuklang (.jpg, .png)</label>
+                            <input class="form-control form-control-sm" type="file" id="file-receipt">
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light rounded-3 px-4 py-2 text-secondary fw-semibold" data-bs-dismiss="modal">Bekor qilish</button>
+                        <button type="submit" class="btn btn-success rounded-3 px-4 py-2 fw-bold text-white"><i class="fa-solid fa-check-double me-2"></i>Tasdiqlash</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
