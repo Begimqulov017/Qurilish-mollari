@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UstaBozor — Qurilish Materiallari Markazi</title>
+    <title>UstaBozor — Центр Строительных Материалов</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
@@ -22,28 +22,28 @@
                 </a>
 
                 <div class="welcome-text d-none d-md-block text-center">
-                    🔨 Poydevordan tomgacha — Sifatli qurilish mollari!
+                    🔨 От фундамента до крыши — Качественные стройматериалы!
                 </div>
                 <div class="me-3 bg-light rounded-pill p-1 d-flex gap-1" style="border: 1px solid #e2e8f0;">
-                    <a href="index.html" class="btn btn-sm rounded-pill fw-bold bg-warning text-dark px-3">UZ</a>
-                    <a href="ru/index.html" class="btn btn-sm rounded-pill fw-semibold text-muted px-3">RU</a>
+                    <a href="../index.html" class="btn btn-sm rounded-pill fw-semibold text-muted px-3">UZ</a>
+                    <a href="index.html" class="btn btn-sm rounded-pill fw-bold bg-warning text-dark px-3">RU</a>
                 </div>
                 <button class="btn btn-cart position-relative" data-bs-toggle="modal" data-bs-target="#cartModal">
                     <i class="fa-solid fa-bag-shopping me-2"></i>
-                    <span class="d-none d-sm-inline">Savat</span>
+                    <span class="d-none d-sm-inline">Корзина</span>
                     <span id="cart-counter" class="position-absolute top-0 start-100 translate-middle badge rounded-pill cart-badge">0</span>
                 </button>
             </div>
 
             <div class="welcome-text text-center d-block d-md-none mt-2 small">
-                🔨 Sifatli qurilish mollari!
+                🔨 Качественные строительные материалы!
             </div>
 
             <div class="nav-tabs-custom mt-3">
-                <button class="nav-link active" onclick="switchCategory('material', this)">Devor va shiftni bezash materiallari</button>
-                <button class="nav-link" onclick="switchCategory('santexnika', this)">Santexnika va quvur jihozlari</button>
-                <button class="nav-link" onclick="switchCategory('elektr', this)">Elektrika jihozlari</button>
-                <button class="nav-link" onclick="switchCategory('asboblar', this)">Qo'l mehnat asboblari (Instrumentlar)</button>
+                <button class="nav-link active" onclick="switchCategory('material', this)">Материалы для отделки стен и потолков</button>
+                <button class="nav-link" onclick="switchCategory('santexnika', this)">Сантехника и трубопроводное оборудование</button>
+                <button class="nav-link" onclick="switchCategory('elektr', this)">Электрооборудование</button>
+                <button class="nav-link" onclick="switchCategory('asboblar', this)">Ручные инструменты</button>
             </div>
 
         </div>
@@ -51,8 +51,8 @@
 
     <header class="hero-section text-center">
         <div class="container">
-            <p class="text-muted mb-1 text-uppercase fw-bold" style="font-size:0.75rem; letter-spacing: 1px;">Kafolatlangan Sifat & Tezkor Yetkazib Berish</p>
-            <h1 class="fw-extrabold text-dark mb-0" id="current-category-heading">Qurilish Mollari</h1>
+            <p class="text-muted mb-1 text-uppercase fw-bold" style="font-size:0.75rem; letter-spacing: 1px;">Гарантированное качество и быстрая доставка</p>
+            <h1 class="fw-extrabold text-dark mb-0" id="current-category-heading">Строительные материалы</h1>
         </div>
     </header>
 
@@ -63,17 +63,17 @@
                 <div class="col-6 col-md-4">
                     <div class="food-card">
                         <div class="img-container">
-                            <span class="card-tag">🔥 New</span>
-                            <img src="images/oboy.webp" class="food-img" alt="Oboy">
+                            <span class="card-tag">🔥 Новый</span>
+                            <img src="../images/oboy.webp" class="food-img" alt="Обои">
                         </div>
                         <div class="food-info">
                             <div>
-                                <h3 class="food-title">Devor qog'ozi (Oboy)</h3>
-                                <p class="food-desc">Xonaga tez fursatda shinamlik baxsh etuvchi, turli naqsh va rangga ega estetik qoplama.</p>
+                                <h3 class="food-title">Обои</h3>
+                                <p class="food-desc">> **Эстетичное покрытие с разнообразными узорами и цветами, которое быстро подарит комнате уют.</p>
                             </div>
                             <div class="d-flex justify-content-between align-items-center mt-3">
-                                <span class="price-tag">120 000 <small>SO'M</small></span>
-                                <button class="btn-add-cart" onclick="cartManager.add(101, `Devor qog'ozi (Oboy)`, 120000)">
+                                <span class="price-tag">120 000 <small>СУМ</small></span>
+                                <button class="btn-add-cart" onclick="cartManager.add(101, `Обои`, 120000)">
                                     <i class="fa-solid fa-plus"></i>
                                 </button>
                             </div>
@@ -83,17 +83,17 @@
                 <div class="col-6 col-md-4">
                     <div class="food-card">
                         <div class="img-container">
-                            <span class="card-tag">🔥 New</span>
-                            <img src="images/suvli emulsiya.png" class="food-img" alt="Suvli emulsiya">
+                            <span class="card-tag">🔥 Новый</span>
+                            <img src="../images/suvli emulsiya.png" class="food-img" alt="Водоэмульсионная краска">
                         </div>
                         <div class="food-info">
                             <div>
-                                <h3 class="food-title">Suvli emulsiya (Vodotemulsiya)</h3>
-                                <p class="food-desc">Shiftdan tortib devorgacha oppoq va tekis rang beruvchi, hidsiz hamda tez quriydigan boʻyoq turi.</p>
+                                <h3 class="food-title">Водоэмульсионная краска</h3>
+                                <p class="food-desc">Вид краски без запаха и с быстрым высыханием, которая обеспечивает безупречно белую и ровную поверхность от потолка до стен.</p>
                             </div>
                             <div class="d-flex justify-content-between align-items-center mt-3">
-                                <span class="price-tag">150 000 <small>SO'M</small></span>
-                                <button class="btn-add-cart" onclick="cartManager.add(102, 'Suvli emulsiya (Vodotemulsiya)', 150000)">
+                                <span class="price-tag">150 000 <small>СУМ</small></span>
+                                <button class="btn-add-cart" onclick="cartManager.add(102, 'Водоэмульсионная краска', 150000)">
                                     <i class="fa-solid fa-plus"></i>
                                 </button>
                             </div>
@@ -103,16 +103,16 @@
                 <div class="col-6 col-md-4">
                     <div class="food-card">
                         <div class="img-container">
-                            <img src="images/Shpaklyovka kukuni.webp" class="food-img" alt="Shpaklyovka kukuni">
+                            <img src="../images/Shpaklyovka kukuni.webp" class="food-img" alt="Шпатлёвка в порошке">
                         </div>
                         <div class="food-info">
                             <div>
-                                <h3 class="food-title">Shpaklyovka kukuni</h3>
-                                <p class="food-desc">Devor yuzasidagi mayda teshik va notekisliklarni silliqlab, oboy yoki boʻyoqqa tayyorlab beruvchi asosiy qorishma.</p>
+                                <h3 class="food-title">Шпатлёвка в порошке</h3>
+                                <p class="food-desc">Основная смесь, которая выравнивает мелкие поры и неровности на поверхности стены, подготавливая её к поклейке обоев или покраске.</p>
                             </div>
                             <div class="d-flex justify-content-between align-items-center mt-3">
-                                <span class="price-tag">55 000 <small>SO'M</small></span>
-                                <button class="btn-add-cart" onclick="cartManager.add(103, 'Shpaklyovka kukuni', 55000)">
+                                <span class="price-tag">55 000 <small>СУМ</small></span>
+                                <button class="btn-add-cart" onclick="cartManager.add(103, 'Шпатлёвка в порошке', 55000)">
                                     <i class="fa-solid fa-plus"></i>
                                 </button>
                             </div>
@@ -127,16 +127,16 @@
                 <div class="col-6 col-md-4">
                     <div class="food-card">
                         <div class="img-container">
-                            <img src="images/Suv jo'mragi (Smesitel).webp" class="food-img" alt="Smesitel">
+                            <img src="../images/Suv jo'mragi (Smesitel).webp" class="food-img" alt="Смеситель">
                         </div>
                         <div class="food-info">
                             <div>
-                                <h3 class="food-title">Suv joʻmragi (Smesitel)</h3>
-                                <p class="food-desc">Issiq va sovuq suv bosimini aralashtirib, oshxona yoki hammomda qulay foydalanishni taʼminlaydigan moslama.</p>
+                                <h3 class="food-title">Смеситель</h3>
+                                <p class="food-desc">Устройство, которое смешивает потоки горячей и холодной воды, обеспечивая удобное использование на кухне или в ванной комнате.</p>
                             </div>
                             <div class="d-flex justify-content-between align-items-center mt-3">
-                                <span class="price-tag">280 000 <small>SO'M</small></span>
-                                <button class="btn-add-cart" onclick="cartManager.add(201, 'Suv joʻmragi (Smesitel)', 280000)">
+                                <span class="price-tag">280 000 <small>СУМ</small></span>
+                                <button class="btn-add-cart" onclick="cartManager.add(201, 'Смеситель', 280000)">
                                     <i class="fa-solid fa-plus"></i>
                                 </button>
                             </div>
@@ -146,16 +146,16 @@
                 <div class="col-6 col-md-4">
                     <div class="food-card">
                         <div class="img-container">
-                            <img src="images/plastik suv quvuri.jpg" class="food-img" alt="Plastik suv quvuri">
+                            <img src="../images/plastik suv quvuri.jpg" class="food-img" alt="Пластиковая водопроводная труба">
                         </div>
                         <div class="food-info">
                             <div>
-                                <h3 class="food-title">Plastik suv quvuri</h3>
-                                <p class="food-desc">Chirishga va zangga chidamli, ichimlik suvi hamda isitish tizimini xavfsiz tashib beruvchi elastik quvur.</p>
+                                <h3 class="food-title">Пластиковая водопроводная труба</h3>
+                                <p class="food-desc">Устойчивая к гниению и ржавчине эластичная труба, которая обеспечивает безопасную транспортировку питьевой воды и работу систем отопления.</p>
                             </div>
                             <div class="d-flex justify-content-between align-items-center mt-3">
-                                <span class="price-tag">12 000 <small>SO'M</small></span>
-                                <button class="btn-add-cart" onclick="cartManager.add(202, 'Plastik suv quvuri', 12000)">
+                                <span class="price-tag">12 000 <small>СУМ</small></span>
+                                <button class="btn-add-cart" onclick="cartManager.add(202, 'Пластиковая водопроводная труба', 12000)">
                                     <i class="fa-solid fa-plus"></i>
                                 </button>
                             </div>
@@ -165,16 +165,16 @@
                 <div class="col-6 col-md-4">
                     <div class="food-card">
                         <div class="img-container">
-                            <img src="images/sifon rakvina uchun.jpg" class="food-img" alt="Sifon">
+                            <img src="../images/sifon rakvina uchun.jpg" class="food-img" alt="Сифон">
                         </div>
                         <div class="food-info">
                             <div>
-                                <h3 class="food-title">Sifon (Rakovina uchun)</h3>
-                                <p class="food-desc">Chanoq ostidagi chiqindi suvni oʻtkazib, kanalizatsiyadan keladigan badboʻy hidlarni uy ichiga kiritmaydigan gidrozatvor.</p>
+                                <h3 class="food-title">Сифон (для раковины)</h3>
+                                <p class="food-desc">Гидрозатвор, который отводит сточную воду из раковины и не пропускает неприятные запахи из канализации в дом.</p>
                             </div>
                             <div class="d-flex justify-content-between align-items-center mt-3">
-                                <span class="price-tag">35 000 <small>SO'M</small></span>
-                                <button class="btn-add-cart" onclick="cartManager.add(203, 'Sifon (Rakovina uchun)', 35000)">
+                                <span class="price-tag">35 000 <small>СУМ</small></span>
+                                <button class="btn-add-cart" onclick="cartManager.add(203, 'Сифон (для раковины)', 35000)">
                                     <i class="fa-solid fa-plus"></i>
                                 </button>
                             </div>
@@ -189,17 +189,17 @@
                 <div class="col-6 col-md-4">
                     <div class="food-card">
                         <div class="img-container">
-                            <span class="card-tag">🔥 New</span>
-                            <img src="images/mis sim.jpg" class="food-img" alt="Mis sim">
+                            <span class="card-tag">🔥 Новый</span>
+                            <img src="../images/mis sim.jpg" class="food-img" alt="Медный провод">
                         </div>
                         <div class="food-info">
                             <div>
-                                <h3 class="food-title">Elektr simlari (Mis sim)</h3>
-                                <p class="food-desc">Tok oʻtkazuvchanligi yuqori va yuklamalarga chidamli, uydagi barcha jihozlarni elektr bilan taʼminlovchi asosiy kabel.</p>
+                                <h3 class="food-title">Электрические провода (Медный провод)</h3>
+                                <p class="food-desc">Основной кабель с высокой токопроводимостью и устойчивостью к нагрузкам, который обеспечивает электричеством все приборы в доме.</p>
                             </div>
                             <div class="d-flex justify-content-between align-items-center mt-3">
-                                <span class="price-tag">6 000 <small>SO'M</small></span>
-                                <button class="btn-add-cart" onclick="cartManager.add(301, 'Elektr simlari (Mis sim)', 6000)">
+                                <span class="price-tag">6 000 <small>СУМ</small></span>
+                                <button class="btn-add-cart" onclick="cartManager.add(301, 'Электрические провода (Медный провод)', 6000)">
                                     <i class="fa-solid fa-plus"></i>
                                 </button>
                             </div>
@@ -209,16 +209,16 @@
                 <div class="col-6 col-md-4">
                     <div class="food-card">
                         <div class="img-container">
-                            <img src="images/rozetka.webp" class="food-img" alt="Rozetka">
+                            <img src="../images/rozetka.webp" class="food-img" alt="Розетка">
                         </div>
                         <div class="food-info">
                             <div>
-                                <h3 class="food-title">Rozetka</h3>
-                                <p class="food-desc">Maishiy texnikalar va zaryadlovchi qurilmalarni elektr tarmogʻiga xavfsiz ulash nuqtasi.</p>
+                                <h3 class="food-title">Розетка</h3>
+                                <p class="food-desc">Точка безопасного подключения бытовой техники и зарядных устройств к электрической сети.</p>
                             </div>
                             <div class="d-flex justify-content-between align-items-center mt-3">
-                                <span class="price-tag">22 000 <small>SO'M</small></span>
-                                <button class="btn-add-cart" onclick="cartManager.add(302, 'Rozetka', 22000)">
+                                <span class="price-tag">22 000 <small>СУМ</small></span>
+                                <button class="btn-add-cart" onclick="cartManager.add(302, 'Розетка', 22000)">
                                     <i class="fa-solid fa-plus"></i>
                                 </button>
                             </div>
@@ -229,17 +229,17 @@
                 <div class="col-6 col-md-4">
                     <div class="food-card">
                         <div class="img-container">
-                            <span class="card-tag">🔥 New</span>
-                            <img src="images/Avtomat oʻchirgich.jpg" class="food-img" alt="Avtomat oʻchirgich">
+                            <span class="card-tag">🔥 Новый</span>
+                            <img src="../images/Avtomat oʻchirgich.jpg" class="food-img" alt="Автоматический выключатель">
                         </div>
                         <div class="food-info">
                             <div>
-                                <h3 class="food-title">Avtomat oʻchirgich</h3>
-                                <p class="food-desc">Tarmoqda qisqa tutashuv yoki ortiqcha yuklama boʻlganda tokni avtomatik uzib, uyni yongʻindan asrovchi qalqon.</p>
+                                <h3 class="food-title">Автоматический выключатель</h3>
+                                <p class="food-desc">Щит, который защищает дом от пожара, автоматически отключая ток при коротком замыкании или перегрузке в сети.</p>
                             </div>
                             <div class="d-flex justify-content-between align-items-center mt-3">
-                                <span class="price-tag">30 000 <small>SO'M</small></span>
-                                <button class="btn-add-cart" onclick="cartManager.add(401, 'Avtomat oʻchirgich', 30000)">
+                                <span class="price-tag">30 000 <small>СУМ</small></span>
+                                <button class="btn-add-cart" onclick="cartManager.add(401, 'Автоматический выключатель', 30000)">
                                     <i class="fa-solid fa-plus"></i>
                                 </button>
                             </div>
@@ -254,16 +254,16 @@
                 <div class="col-6 col-md-4">
                     <div class="food-card">
                         <div class="img-container">
-                            <img src="images/Shpatel (Molga).webp" class="food-img" alt="Shpatel">
+                            <img src="../images/Shpatel (Molga).webp" class="food-img" alt="Шпатель">
                         </div>
                         <div class="food-info">
                             <div>
-                                <h3 class="food-title">Shpatel (Molga)</h3>
-                                <p class="food-desc">Devor va shift yuzalariga qurilish qorishmalarini (shpaklyovka, gips) surtish, tekislash va silliqlash uchun moʻljallangan qulay qoʻl asbobi.</p>
+                                <h3 class="food-title">Шпатель (Кельма)</h3>
+                                <p class="food-desc">Инструмент для нанесения, выравнивания и сглаживания строительных смесей (шпатлёвки, штукатурки) на поверхностях.</p>
                             </div>
                             <div class="d-flex justify-content-between align-items-center mt-3">
-                                <span class="price-tag">25 000 <small>SO'M</small></span>
-                                <button class="btn-add-cart" onclick="cartManager.add(401, 'Shpatel (Molga)', 25000)">
+                                <span class="price-tag">25 000 <small>СУМ</small></span>
+                                <button class="btn-add-cart" onclick="cartManager.add(401, 'Шпатель (Кельма)', 25000)">
                                     <i class="fa-solid fa-plus"></i>
                                 </button>
                             </div>
@@ -273,16 +273,16 @@
                 <div class="col-6 col-md-4">
                     <div class="food-card">
                         <div class="img-container">
-                            <img src="images/Boʻyoq surtadigan gʻaltak (Valik).webp" class="food-img" alt="Valik">
+                            <img src="../images/Boʻyoq surtadigan gʻaltak (Valik).webp" class="food-img" alt="Валик">
                         </div>
                         <div class="food-info">
                             <div>
-                                <h3 class="food-title">Boʻyoq surtadigan gʻaltak (Valik)</h3>
-                                <p class="food-desc">Katta maydonli devor va shiftlarga emulsiya yoki laklarni tez va bir tekisda yoyish uchun eng qulay vosita.</p>
+                                <h3 class="food-title">Малярный валик</h3>
+                                <p class="food-desc">Самый удобный инструмент для быстрого и равномерного нанесения эмульсии или лака на стены и потолки большой площади.</p>
                             </div>
                             <div class="d-flex justify-content-between align-items-center mt-3">
-                                <span class="price-tag">30 000 <small>SO'M</small></span>
-                                <button class="btn-add-cart" onclick="cartManager.add(402, 'Boʻyoq surtadigan gʻaltak (Valik)', 30000)">
+                                <span class="price-tag">30 000 <small>СУМ</small></span>
+                                <button class="btn-add-cart" onclick="cartManager.add(402, 'Малярный валик', 30000)">
                                     <i class="fa-solid fa-plus"></i>
                                 </button>
                             </div>
@@ -293,16 +293,16 @@
                     <div class="food-card">
                         <div class="img-container">
                             <span class="card-tag">🔥 New</span>
-                            <img src="images/Qo'l arrasi (Temir yoki yog'och uchun).jpg" class="food-img" alt="Qo'l arrasi">
+                            <img src="../images/Qo'l arrasi (Temir yoki yog'och uchun).jpg" class="food-img" alt="Ножовка">
                         </div>
                         <div class="food-info">
                             <div>
-                                <h3 class="food-title">Qo'l arrasi</h3>
-                                <p class="food-desc">Remont jarayonida yogʻoch, plastik yoki yupqa metall profillarni aniq oʻlchamda kesib olish uchun oʻtkir tishli asbob.</p>
+                                <h3 class="food-title">Ручная пила (Ножовка)</h3>
+                                <p class="food-desc">Острый зубчатый инструмент для точной распиловки дерева, пластика или тонких металлических профилей в процессе ремонта.</p>
                             </div>
                             <div class="d-flex justify-content-between align-items-center mt-3">
-                                <span class="price-tag">55 000 <small>SO'M</small></span>
-                                <button class="btn-add-cart" onclick="cartManager.add(402, `Qo'l arrasi`, 55000)">
+                                <span class="price-tag">55 000 <small>СУМ</small></span>
+                                <button class="btn-add-cart" onclick="cartManager.add(402, `Ручная пила (Ножовка)`, 55000)">
                                     <i class="fa-solid fa-plus"></i>
                                 </button>
                             </div>
@@ -318,22 +318,22 @@
         <div class="modal-dialog modal-dialog-centered modal-md">
             <div class="modal-content">
                 <div class="modal-header d-flex align-items-center justify-content-between">
-                    <h5 class="modal-title fw-bold text-dark"><i class="fa-solid fa-cart-shopping text-warning me-2"></i>Sizning savatchangiz</h5>
-                    <button type="button" class="btn-close" data-bs-shadow="none" data-bs-dismiss="modal" aria-label="Yopish"></button>
+                    <h5 class="modal-title fw-bold text-dark"><i class="fa-solid fa-cart-shopping text-warning me-2"></i>Ваша корзина</h5>
+                    <button type="button" class="btn-close" data-bs-shadow="none" data-bs-dismiss="modal" aria-label="Закрыть"></button>
                 </div>
                 <div class="modal-body px-4" style="max-height: 400px; overflow-y: auto;">
                     <div id="cart-items-wrapper"></div>
                     
                     <div class="d-flex justify-content-between align-items-center mt-4 pt-3 border-top">
-                        <span class="text-muted fw-semibold">Jami summa:</span>
-                        <span class="fs-4 fw-black text-primary" id="cart-total-sum">0 so'm</span>
+                        <span class="text-muted fw-semibold">Общая сумма:</span>
+                        <span class="fs-4 fw-black text-primary" id="cart-total-sum">0 сум</span>
                     </div>
                 </div>
                 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-light rounded-3 px-4 py-2 fw-semibold text-secondary" data-bs-dismiss="modal">Yopish</button>
+                    <button type="button" class="btn btn-light rounded-3 px-4 py-2 fw-semibold text-secondary" data-bs-dismiss="modal">Закрыть</button>
                     <button type="button" class="btn btn-cart px-4 py-2" id="btn-go-checkout" onclick="checkoutFlow.openOrderModal()" disabled>
-                        Rasmiylashtirish <i class="fa-solid fa-arrow-right ms-2"></i>
+                        Оформление <i class="fa-solid fa-arrow-right ms-2"></i>
                     </button>
                 </div>
             </div>
@@ -344,22 +344,22 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title fw-bold text-dark"><i class="fa-solid fa-truck-fast text-primary me-2"></i>Buyurtmani rasmiylashtirish</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Yopish"></button>
+                    <h5 class="modal-title fw-bold text-dark"><i class="fa-solid fa-truck-fast text-primary me-2"></i>Оформить заказ</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
                 </div>
                 <form id="mainOrderForm" onsubmit="checkoutFlow.submitOrder(event)">
                     <div class="modal-body px-4">
                         
                         <div class="mb-3">
-                            <label for="input-fullname" class="form-label fw-semibold text-secondary small">Ism va Familiya</label>
+                            <label for="input-fullname" class="form-label fw-semibold text-secondary small">Имя и Фамилия</label>
                             <div class="input-group">
                                 <span class="input-group-text bg-light text-muted"><i class="fa-regular fa-user"></i></span>
-                                <input type="text" class="form-control" id="input-fullname" placeholder="Masalan: Ahrorbek" oninput="checkoutFlow.filterName(event)" required>
+                                <input type="text" class="form-control" id="input-fullname" placeholder="Например: Ахрорбек" oninput="checkoutFlow.filterName(event)" required>
                             </div>
                         </div>
 
                         <div class="mb-3">
-                            <label for="input-phone" class="form-label fw-semibold text-secondary small">Telefon raqam</label>
+                            <label for="input-phone" class="form-label fw-semibold text-secondary small">Номер телефона</label>
                             <div class="input-group">
                                 <span class="input-group-text bg-light text-muted"><i class="fa-solid fa-phone"></i></span>
                                 <input type="tel" class="form-control" id="input-phone" placeholder="+998 90 123 4567" oninput="checkoutFlow.formatPhone(event)" onfocus="checkoutFlow.formatPhone(event)" maxlength="17" inputmode="tel" required>
@@ -367,18 +367,18 @@
                         </div>
 
                         <div class="mb-4">
-                            <label class="form-label fw-semibold text-secondary small">Yetkazib berish manzili (GPS)</label>
+                            <label class="form-label fw-semibold text-secondary small">Адрес доставки (GPS)</label>
                             <input type="hidden" id="input-location">
                             <div class="d-grid">
                                 <button type="button" class="btn btn-outline-primary py-3" id="btn-get-location" onclick="checkoutFlow.getLocation()">
-                                    <i class="fa-solid fa-crosshairs me-2"></i>GPS orqali lokatsiya olish
+                                    <i class="fa-solid fa-crosshairs me-2"></i>Получить локацию по GPS
                                 </button>
                             </div>
                             <div id="location-status" class="mt-2 small"></div>
                         </div>
 
                         <div class="mb-4">
-                            <label class="form-label fw-bold text-dark small d-block mb-3">To'lov uslubi:</label>
+                            <label class="form-label fw-bold text-dark small d-block mb-3">Способ оплаты:</label>
                             
                             <div class="row g-3">
                                 <div class="col-12">
@@ -386,7 +386,7 @@
                                         <input class="form-check-input position-absolute d-none" type="radio" name="paymentMethod" id="pay-online" value="online" checked onchange="checkoutFlow.togglePaymentSection()">
                                         <div class="payment-card-option text-center">
                                             <i class="fa-solid fa-credit-card fs-4 text-primary mb-2 d-block"></i>
-                                            <span class="fw-semibold small d-block">Karta orqali (Click/Payme)</span>
+                                            <span class="fw-semibold small d-block">Картой (Click/Payme)</span>
                                         </div>
                                     </label>
                                 </div>
@@ -396,18 +396,18 @@
                         <div id="receipt-upload-box" class="p-3 rounded-4 bg-light border border-dashed mb-3">
                             <div class="d-flex align-items-center mb-2">
                                 <i class="fa-solid fa-wallet text-warning me-2 fs-5"></i>
-                                <span class="fw-bold small text-dark">Do'kon plastik kartasi:</span>
+                                <span class="fw-bold small text-dark">Пластиковая карта магазина:</span>
                             </div>
                             <p class="mb-3 text-muted font-monospace small bg-white p-2 rounded text-center border fw-bold">9860 1201 5432 9988</p>
                             
-                            <label for="file-receipt" class="form-label fw-semibold text-secondary small mb-1">To'lov chekini yuklang (.jpg, .png)</label>
+                            <label for="file-receipt" class="form-label fw-semibold text-secondary small mb-1">Загрузите чек об оплате (.jpg, .png)</label>
                             <input class="form-control form-control-sm" type="file" id="file-receipt">
                         </div>
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-light rounded-3 px-4 py-2 text-secondary fw-semibold" data-bs-dismiss="modal">Bekor qilish</button>
-                        <button type="submit" class="btn btn-success rounded-3 px-4 py-2 fw-bold text-white"><i class="fa-solid fa-check-double me-2"></i>Tasdiqlash</button>
+                        <button type="button" class="btn btn-light rounded-3 px-4 py-2 text-secondary fw-semibold" data-bs-dismiss="modal">Отменить</button>
+                        <button type="submit" class="btn btn-success rounded-3 px-4 py-2 fw-bold text-white"><i class="fa-solid fa-check-double me-2"></i>Подтвердить</button>
                     </div>
                 </form>
             </div>
@@ -415,6 +415,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/app.js"></script>
+    <script src="../js/app.js"></script>
 </body>
 </html>

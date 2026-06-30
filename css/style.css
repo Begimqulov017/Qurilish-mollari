@@ -1,7 +1,7 @@
 :root {
-    --primary: #ff9800; /* Qurilish va remont sohasi uchun to'q sariq */
+    --primary: #ff9800; 
     --primary-hover: #e68900;
-    --secondary: #232b38; /* Sanoat uslubidagi to'q uglerod rang */
+    --secondary: #232b38; 
     --accent: #ffb627;
     --bg-body: #f5f7fa;
     --card-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
