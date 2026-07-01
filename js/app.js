@@ -349,6 +349,108 @@ const checkoutFlow = {
     }
 };
 
+const productViewer = {
+    activeIdx: 0,
+    images: [],
+
+    open: function(containerEl) {
+        const card = containerEl.closest('.food-card');
+        const mainImgEl = containerEl.querySelector('.food-img');
+        const extraImgs = JSON.parse(containerEl.dataset.imgs || '[]');
+        const name = card.querySelector('.food-title').textContent.trim();
+        const desc = card.querySelector('.food-desc').textContent.trim();
+        const priceText = card.querySelector('.price-tag').innerHTML.trim();
+        const addBtnOnclick = card.querySelector('.btn-add-cart').getAttribute('onclick');
+
+        this.images = [mainImgEl.src].concat(extraImgs);
+        this.activeIdx = 0;
+
+        const closeLabel = LANG === 'ru' ? 'Закрыть' : 'Yopish';
+        const addLabel   = LANG === 'ru' ? 'В корзину' : 'Savatga qo\'shish';
+        const moreLabel  = LANG === 'ru' ? 'Фото' : 'Rasm';
+
+        const thumbsHtml = this.images.map((src, i) => {
+            if (src) {
+                return `<img src="${src}" class="pv-thumb${i===0?' active':''}" onclick="productViewer.switchImg(${i})" alt="">`;
+            } else {
+                return `<div class="pv-thumb pv-thumb-empty${i===0?' active':''}" onclick="productViewer.switchImg(${i})">
+                    <i class="fa-solid fa-image"></i><span>${moreLabel} ${i+1}</span>
+                </div>`;
+            }
+        }).join('');
+
+        const overlay = document.createElement('div');
+        overlay.id = 'pv-overlay';
+        overlay.innerHTML = `
+        <div class="pv-backdrop" onclick="productViewer.close()"></div>
+        <div class="pv-modal">
+            <button class="pv-close" onclick="productViewer.close()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="pv-left">
+                <div class="pv-main-img-wrap">
+                    <img id="pv-main-img" src="${this.images[0] || ''}" alt="${name}" ${!this.images[0] ? 'style="display:none"' : ''}>
+                    ${!this.images[0] ? '<div class="pv-img-placeholder"><i class="fa-solid fa-image"></i></div>' : ''}
+                </div>
+                <div class="pv-thumbs">${thumbsHtml}</div>
+            </div>
+            <div class="pv-right">
+                <h2 class="pv-name">${name}</h2>
+                <p class="pv-desc">${desc}</p>
+                <div class="pv-price">${priceText}</div>
+                <button class="pv-add-btn" onclick="${addBtnOnclick}; productViewer.close()">
+                    <i class="fa-solid fa-basket-shopping me-2"></i>${addLabel}
+                </button>
+            </div>
+        </div>`;
+
+        document.body.appendChild(overlay);
+        document.body.style.overflow = 'hidden';
+        requestAnimationFrame(() => overlay.classList.add('visible'));
+    },
+
+    switchImg: function(idx) {
+        this.activeIdx = idx;
+        const src = this.images[idx];
+        const mainImg = document.getElementById('pv-main-img');
+        
+        if (src) {
+            mainImg.src = src;
+            mainImg.style.display = '';
+            const placeholder = document.querySelector('.pv-img-placeholder');
+            if (placeholder) placeholder.style.display = 'none';
+        } else {
+            mainImg.style.display = 'none';
+            let placeholder = document.querySelector('.pv-img-placeholder');
+            if (!placeholder) {
+                placeholder = document.createElement('div');
+                placeholder.className = 'pv-img-placeholder';
+                placeholder.innerHTML = '<i class="fa-solid fa-image"></i>';
+                mainImg.parentNode.appendChild(placeholder);
+            }
+            placeholder.style.display = '';
+        }
+
+        document.querySelectorAll('.pv-thumb, .pv-thumb-empty').forEach((t, i) => {
+            t.classList.toggle('active', i === idx);
+        });
+    },
+
+    close: function() {
+        const overlay = document.getElementById('pv-overlay');
+        if (!overlay) return;
+        overlay.classList.remove('visible');
+        setTimeout(() => {
+            overlay.remove();
+            document.body.style.overflow = '';
+        }, 250);
+    }
+};
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') productViewer.close();
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     cartManager.syncDOM();
 });

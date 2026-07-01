@@ -294,3 +294,187 @@ input[type="radio"]:checked + .payment-card-option {
         border-radius: 20px 20px 0 0 !important; /* Mobil telefonlar uchun pastki panel effekti */
     }
 }
+/* ===== PRODUCT VIEWER (LIGHTBOX) ===== */
+#pv-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    padding: 16px;
+}
+#pv-overlay.visible { opacity: 1; }
+
+.pv-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    backdrop-filter: blur(4px);
+}
+
+.pv-modal {
+    position: relative;
+    background: white;
+    border-radius: 24px;
+    display: flex;
+    gap: 0;
+    width: 100%;
+    max-width: 860px;
+    max-height: 90vh;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+    transform: translateY(20px);
+    transition: transform 0.25s ease;
+}
+#pv-overlay.visible .pv-modal { transform: translateY(0); }
+
+.pv-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 10;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0,0,0,0.08);
+    color: #444;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+.pv-close:hover { background: rgba(0,0,0,0.15); }
+
+/* LEFT — images */
+.pv-left {
+    width: 50%;
+    flex-shrink: 0;
+    background: #f8fafc;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 12px;
+}
+
+.pv-main-img-wrap {
+    flex: 1;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 260px;
+}
+.pv-main-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    max-height: 340px;
+}
+.pv-img-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #cbd5e1;
+    font-size: 3rem;
+}
+
+.pv-thumbs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+.pv-thumb {
+    width: 64px;
+    height: 64px;
+    border-radius: 10px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.2s;
+}
+.pv-thumb.active { border-color: var(--primary); }
+.pv-thumb-empty {
+    width: 64px;
+    height: 64px;
+    border-radius: 10px;
+    border: 2px dashed #cbd5e1;
+    background: #f1f5f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #94a3b8;
+    font-size: 0.65rem;
+    gap: 3px;
+    transition: border-color 0.2s;
+}
+.pv-thumb-empty i { font-size: 1.1rem; }
+.pv-thumb-empty.active { border-color: var(--primary); color: var(--primary); }
+
+/* RIGHT — info */
+.pv-right {
+    flex: 1;
+    padding: 28px 24px 24px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: auto;
+}
+.pv-name {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--secondary);
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+.pv-desc {
+    font-size: 0.88rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.pv-price {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 24px;
+}
+.pv-add-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 14px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    width: 100%;
+}
+.pv-add-btn:hover { background: var(--primary-hover); }
+.pv-add-btn:active { transform: scale(0.98); }
+
+/* Mobile */
+@media (max-width: 600px) {
+    #pv-overlay { padding: 0; align-items: flex-end; }
+    .pv-modal {
+        flex-direction: column;
+        max-height: 92vh;
+        border-radius: 20px 20px 0 0;
+        max-width: 100%;
+    }
+    .pv-left { width: 100%; padding: 14px 14px 0; min-height: 240px; }
+    .pv-main-img-wrap { min-height: 200px; }
+    .pv-right { padding: 14px; }
+    .pv-name { font-size: 1.05rem; }
+    .pv-price { font-size: 1.3rem; margin-bottom: 14px; }
+}
